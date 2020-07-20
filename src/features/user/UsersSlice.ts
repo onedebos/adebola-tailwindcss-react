@@ -46,13 +46,9 @@ const usersSlice = createSlice({
 export const {
   setUser,
   setSignUpMessage,
-  signUpMessage,
   setLoggedIn,
   setLoading,
-  loading,
   setErrors,
-  user,
-  loggedIn,
   logOutUser,
 } = usersSlice.actions;
 
@@ -61,13 +57,13 @@ export default usersSlice.reducer;
 export const usersSelector = (state: { users: any }) => state.users;
 
 // SIGN IN ALL USERS
-export const signIn = () => {
-  return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
-    try {
-      const res = await functionToLogoutUser();
-      dispatch(setUser(res.data));
-    } catch (error) {
-      dispatch(setErrors(error));
-    }
-  };
-};
+// export const signIn = () => {
+//   return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
+//     try {
+//       const res = await functionToLogoutUser();
+//       dispatch(setUser(res.data));
+//     } catch (error) {
+//       dispatch(setErrors(error));
+//     }
+//   };
+// };
