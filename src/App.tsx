@@ -1,5 +1,15 @@
 import React from "react";
 
+const App: React.FC<AppProps> = ({ message }) => {
+  return (
+    <div className="flex justify-center items-center m-auto bg-red-300 min-h-screen">
+      <header className="font-medium text-2xl">{message}</header>
+    </div>
+  );
+};
+
+export default App;
+
 export interface AppProps {
   message: string;
 }
@@ -18,13 +28,3 @@ type AppProps2 = {
   /** function with named prop (VERY COMMON) */
   onChange: (id: number) => void;
 };
-
-const App: React.FC<AppProps> = ({ message }) => {
-  return (
-    <div className="flex justify-center items-center m-auto bg-red-300 min-h-screen">
-      <header className="font-medium text-2xl">{message}</header>
-    </div>
-  );
-};
-
-export default App;
