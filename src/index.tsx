@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import usersSliceReducer from "./features/user/UsersSlice";
 import * as serviceWorker from "./serviceWorker";
 
+require('typeface-nunito');
+
 const store = configureStore({
   reducer: {
     users: usersSliceReducer,
