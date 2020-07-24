@@ -9,5 +9,6 @@ To use this template
 - `git clone git@github.com:onedebos/adebola-tailwindcss-react.git`
 - `yarn install`
 - `rm -rf git` to remove git 
+- `git init` to re-initialise git
 - Add your own remote repo
 - Enjoyy!
