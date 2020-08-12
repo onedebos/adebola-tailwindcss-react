@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { photoSelector, getPhotos } from "./features/photos/PhotoSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { setLoading, usersSelector } from "./features/user/UsersSlice";
+
 import AnotherComponent from "./AnotherComponent";
 
 //can use React.SFC if component is stateless
 const App: React.FC<AppProps> = ({ message }) => {
-  const [name, setName] = useState<string>("");
-  const { loading } = useSelector(usersSelector);
   const dispatch = useDispatch();
+  const { photos, loading, errors } = useSelector(photoSelector);
 
   // async function to use in useEffect
   const fireSetName = async (anyName: string) => {

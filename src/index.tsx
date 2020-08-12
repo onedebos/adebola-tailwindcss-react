@@ -1,18 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles/index.css";
 import App from "./App";
-import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import usersSliceReducer from "./features/user/UsersSlice";
+import { configureStore, Action } from "@reduxjs/toolkit";
+import PhotosSliceReducer from "./features/photos/PhotoSlice";
+import { ThunkAction } from "redux-thunk";
+import { PhotoState } from "./features/photos/PhotoSlice";
+import "./styles";
+
 import * as serviceWorker from "./serviceWorker";
 
-require('typeface-nunito');
+require("typeface-nunito");
+
+export type AppThunk = ThunkAction<void, PhotoState, unknown, Action<string>>;
 
 const store = configureStore({
   reducer: {
-    users: usersSliceReducer,
-    // obj: ojSlice.reducer
+    photosStore: PhotosSliceReducer,
+    // anyOtherStore: anyOtherSlice
   },
 });
 
